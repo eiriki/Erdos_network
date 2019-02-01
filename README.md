@@ -1,14 +1,14 @@
 # Erdos_network
 A solution to the 2014 ICM problem as part of an in-class assignment. Solved with Quan Pham and Xinhao Ma
 
-###Output
+### Output
 * Erdos Network Presentation.pdf
-  The full slideshow of our results
+  * The full slideshow of our results
 * Erdos_Model1.pdf
-  *PDF image of the first model network
+  * PDF image of the first model network
 * Erdos_Model2.pdf
-  *PDF image of the second model network
-###R
+  * PDF image of the second model network
+### R
 * scrape_erdos.R
   * This is where we prepare the data for use in our influence model. Creation of co-author matrix for a network approach.
 * plot_erdos.R
@@ -16,5 +16,5 @@ A solution to the 2014 ICM problem as part of an in-class assignment. Solved wit
 * IMDB_model.R
   * An attempt at extending our network approach to the film industry. The results were not that great. Future work may involve using additional IMDB variables or a different approach altogether.
 
-###Data 
+### Data 
 *Directory for data
