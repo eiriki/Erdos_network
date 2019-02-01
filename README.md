@@ -3,7 +3,7 @@ A solution to the 2014 ICM problem as part of an in-class assignment. Solved wit
 
 ###Output
 * Erdos Network Presentation.pdf
-  *The full slideshow of our results
+  The full slideshow of our results
 * Erdos_Model1.pdf
   *PDF image of the first model network
 * Erdos_Model2.pdf
