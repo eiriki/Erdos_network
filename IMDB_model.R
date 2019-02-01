@@ -1,6 +1,14 @@
+###NOTE###
+# This script was an attempt to extend our Erdos Influence network approach to IMDB movie database
+# The plan was to use Leonardo DiCaprio as our "Erdos": that is, among all of Leonardo DiCaprio's
+# costars in his movies, who is the most influential? Our models did not extend well to the film
+# industry and this script is not very useful in looking at anything. 
+###END NOTE###
 library(stringr)
-actors <- read.csv('./Documents/VTECH Fall 2018/CMDA Capstone/Network Project/finalaComb.csv',header = F)
-raw <- read.csv('./Documents/VTECH Fall 2018/CMDA Capstone/Network Project/raw.csv',header=F)
+library(igraph)
+library(qgraph)
+actors <- read.csv('./data/finalaComb.csv',header = F)
+raw <- read.csv('./data/raw.csv',header=F)
 actors$V3 = as.numeric(actors$V3)
 
 #make the coauthor matrix
@@ -45,11 +53,7 @@ real$V1 <- str_trim(real$V1)
 real$V2 <- as.numeric(as.character(real$V2))
 real$influence <- real$V3/median(real$V3) + (2018-real$V2)/median(real$V2)
 
-ttt <- degree(g,v=V(g))
-real$outdegree <- ttt
-
-library(igraph)
-library(qgraph)
+#plot the resulting network
 g <- graph.adjacency(frame)
 x <- get.edgelist(g,names = F)
 V(g)$size = real$V3
@@ -59,3 +63,6 @@ l <- qgraph.layout.fruchtermanreingold(x,vcount=vcount(g),
                                        area=8*(vcount(g)^2),repulse.rad=(vcount(g)^3.1))
 plot(g,layout=l,vertex.size= 3*(real$V3),vertex.label=ifelse(V(g)$size >= 2,V(g)$label,NA), 
      edge.arrow.size =.1)
+
+ttt <- degree(g,v=V(g))
+real$outdegree <- ttt

@@ -9,10 +9,10 @@ colnames(data) <- c("Name","Year","Count")
 #replace the 300 NAs with value of 1, which is what the NA's represent (1 paper with Erdos)
 data$Count[is.na(data$Count)] <- 1
 
-# Use our model to calculate influence
+# Use our defined model to calculate influence
 data$Influence <- (2018-data$Year)/median(data$Year) + data$Count/median(data$Count)
 
-#read in coauthor matrix
+#read in coauthor matrix: for establishing edges in network and for later model use
 coauth <- readRDS('./data/coauthor.RDS')
 
 g <- graph.adjacency(coauth)
