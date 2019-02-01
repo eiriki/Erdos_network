@@ -1,5 +1,6 @@
 # Erdos_network
-A solution to the 2014 ICM problem as part of an in-class assignment. Solved with Quan Pham and Xinhao Ma
+A solution to the 2014 ICM problem as part of an in-class assignment. Solved with Quan Pham and Xinhao Ma.
+
 For the instructions, see ICM 2014 PDF in the main repository
 ### Output
 * Erdos Network Presentation.pdf
