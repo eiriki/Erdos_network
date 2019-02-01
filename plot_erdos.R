@@ -23,9 +23,6 @@ l <- qgraph.layout.fruchtermanreingold(x,vcount=vcount(g),
                                        area=8*(vcount(g)^2),repulse.rad=(vcount(g)^3.1))
 plot(g,layout=l,vertex.size= 2*log(data$Influence),vertex.label= NA,edge.arrow.size =.1)
 
-# run2 <- read.csv('./InfluenceModel2.csv')
-# run2 <- run2[-512,]
-
 #use a different Influence model: we add a third term using coauthor matrix 
 #we use sum of all the authors worked with, then add 1 to account for Erdos
 new_model_term <- colSums(coauth) + 1  

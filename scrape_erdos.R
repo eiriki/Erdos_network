@@ -18,10 +18,10 @@ text[1:30]
 textVect <- text[25:length(text)]
 textVect
 
-#make a function that will loop through the text and fill a 511x511 matrix 
 #we import project_data.xlsx just for the author name vector
 data <- read_xlsx('./data/project data.xlsx',col_names = F)
 colnames(data) <- c("Name","Year","Count")
+#make a function that will loop through the text and fill a 511x511 matrix 
 frame <- matrix(data= 0, nrow = 511, ncol = 511)
 colnames(frame) <- data$Name
 rownames(frame) <- data$Name
